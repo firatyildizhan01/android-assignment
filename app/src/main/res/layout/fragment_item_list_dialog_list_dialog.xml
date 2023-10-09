@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.arabam.android.assigment.presentation.car.CarViewModel" />
+
+    </data>
+
+    <LinearLayout
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/list_item_spacing_half"
+    android:paddingBottom="@dimen/list_item_spacing_half"
+    tools:context=".presentation.bottom_sheet.ItemListDialogFragment"
+    tools:listitem="@layout/fragment_item_list_dialog_list_dialog_item"
+    >
+
+    <TextView
+        android:id="@+id/bottomPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:onClick="@{() -> viewModel.sortParameter(0)}"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <TextView
+        android:id="@+id/bottomDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.sortParameter(1)}"
+        android:text="Date"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <TextView
+        android:id="@+id/bottomYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.sortParameter(2)}"
+        android:text="Year"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <TextView
+        android:id="@+id/bottomAscending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ascending"
+        android:onClick="@{() -> viewModel.sortDirectionParameter(0)}"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <TextView
+        android:id="@+id/bottomDescending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.sortDirectionParameter(1)}"
+        android:text="Decending"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/bottomMindate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Min Date"
+        android:textColorHint="#2F000000"
+        android:textStyle="bold"
+        android:maxLength="4"
+        android:inputType="number"
+        android:afterTextChanged="@{viewModel::setMinYear}"
+        android:textSize="32sp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/bottomMaxDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:afterTextChanged="@{viewModel::setMaxYear}"
+        android:visibility="gone"
+        android:maxLength="4"
+        android:hint="Max Date"
+        android:textColorHint="#2F000000"
+        android:textSize="32sp"
+        android:inputType="number"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/bottomCategoryId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Category Id"
+        android:textColorHint="#2F000000"
+        android:afterTextChanged="@{viewModel::setCategoryId}"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:inputType="number"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0303"
+        android:onClick="@{() -> viewModel.calculateFilter()}"
+        android:visibility="gone"
+        android:text="Continue" />
+
+</LinearLayout>
+</layout>
