@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/carFragment">
+
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.arabam.android.assigment.presentation.car.CarFragment"
+        android:label="Arabam.com"
+        tools:layout="@layout/fragment_car" >
+        <action
+            android:id="@+id/action_carFragment_to_carDetailFragment"
+            app:destination="@id/carDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carDetailFragment"
+        android:name="com.arabam.android.assigment.presentation.car_detail.CarDetailFragment"
+        android:label="Arabam.com"
+        tools:layout="@layout/fragment_car_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_carFragment"
+            app:destination="@id/carFragment" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_fullScreenCarImageFragment"
+            app:destination="@id/fullScreenCarImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullScreenCarImageFragment"
+        android:name="com.arabam.android.assigment.presentation.fullscreen.FullScreenCarImageFragment"
+        android:label="Arabam.com" >
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
