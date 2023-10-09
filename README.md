@@ -1,6 +1,30 @@
 
 <a href="https://play.google.com/store/apps/details?id=com.dogan.arabam&hl=tr"><img src="https://arbimg1.mncdn.com/assets/dist/img/tek-tur-large.gif"/>
 </a>
+
+## Project Tech Stack ##
+- [Kotlin]
+- [Single-Module Architecture]
+- [Clean Architecture]
+- [Test] - Unit Test for usecase
+- [Mvvm]- Design Pattern.
+- [Navigation Component Library] - For setting up app's navigation.
+- [Kotlin Coroutines]- To execute code asynchronously.
+- [Flow] - In the simplest of ways consider this as a pipe through which the data flows in the app, by using flow
+- [LiveData] - Used to observe the data on the UI layer
+- [ViewModel] - To Store UI-related data that isnt destroyed on UI changes.
+- [RecylerView] - To Display data in a list format.
+- [Dagger Hilt] - For Dependency Injection
+- [Retrofit] - For Http Request
+- [Okhttp] - For Http Log
+- [Moshi] - Json Converter
+- [Databinding, Viewbinding] - Uı binding
+- [Paging 3] - Load and display pages
+
+<img width="282" alt="image" src="https://github.com/firatyildizhan01/android-assignment/assets/32723458/f1e3f9cf-e3ce-400a-9280-f963e2e70f66">
+<img width="295" alt="image" src="https://github.com/firatyildizhan01/android-assignment/assets/32723458/b53afacb-99be-4c5a-98e5-7ee87004a398">
+<img width="281" alt="image" src="https://github.com/firatyildizhan01/android-assignment/assets/32723458/d5191e9e-2c85-4f80-89ca-ca73c9d9fdb1">
+
 ## About Us ##
 
 The arabam.com team, working with the mission to make buying and selling vehicles from the Internet much more reliable, easier and more comfortable, aims to improve the users experience with new functions continuously.
