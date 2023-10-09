@@ -1,20 +1,30 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    namespace 'com.arabam.android.assigment'
+    compileSdk ProjectConfig.compileSdk
 
     defaultConfig {
         applicationId "com.arabam.android.assigment"
-        minSdkVersion 22
-        targetSdkVersion 30
+        minSdk ProjectConfig.minSdk
+        targetSdk ProjectConfig.targetSdk
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+
     }
 
     buildTypes {
@@ -34,10 +44,50 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation libs.core.ktx
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraint.layout
+    implementation libs.swipe.refresh.layout
+    testImplementation libs.junit
+    androidTestImplementation libs.junit.Ext
+    androidTestImplementation libs.espresso
 
+// Navigation Components
+    implementation libs.navigation.Fragment.Ktx
+    implementation libs.navigation.Ui.Ktx
 
+// Retrofit and OKHTTP
+    implementation libs.retrofit
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+
+// Moshi with Retrofit
+    implementation libs.moshi.Kotlin
+    implementation libs.retrofit.Converter.Moshi
+
+// Coroutines
+    implementation libs.kotlin.Coroutines.Core
+    implementation libs.kotlin.Coroutines.Android
+
+// Coroutine Lifecycle Scopes
+    implementation libs.lifecycle.viewmodel.Ktx
+    implementation libs.lifecycle.Runtime.Ktx
+    implementation libs.activity.Ktx
+
+// Dagger-Hilt
+    implementation libs.dagger.Hilt
+    kapt libs.dagger.Hilt.Compiler
+
+    implementation libs.hilt.Navigation.Fragment
+
+// Paging
+    implementation libs.paging.Runtime
+
+// Coil
+    implementation libs.coil
+
+    testImplementation libs.core.testing
+    testImplementation libs.kotlinx.coroutines
+    testImplementation libs.mockito.android
 }
